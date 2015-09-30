@@ -527,7 +527,7 @@ function Set-TargetResource
             $ClusterNetworks = @(Get-WmiObject -Namespace root/mscluster -Class MSCluster_Network)
             if([String]::IsNullOrEmpty($FailoverClusterIPAddress))
             {
-                $FailoverClusterIPAddresses = "IPv4;DHCP;" + $ClusterNetwork[0].Name
+                $FailoverClusterIPAddresses = "IPv4;DHCP;" + $ClusterNetworks[0].Name
             }
             else
             {
